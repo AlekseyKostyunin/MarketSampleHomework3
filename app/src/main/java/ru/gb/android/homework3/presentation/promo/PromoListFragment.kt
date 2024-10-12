@@ -16,6 +16,8 @@ import kotlinx.coroutines.launch
 import ru.gb.android.homework3.MarketSampleApp
 import ru.gb.android.homework3.marketsample.databinding.FragmentPromoListBinding
 import ru.gb.android.homework3.presentation.promo.adapter.PromoAdapter
+import ru.gb.android.homework3.presentation.promo.di.DaggerPromoComponent
+import ru.gb.android.homework3.presentation.promo.di.PromoComponentDependencies
 import javax.inject.Inject
 
 class PromoListFragment : Fragment() {
@@ -34,11 +36,9 @@ class PromoListFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (activity?.applicationContext as MarketSampleApp)
-            .appComponent
-            .promoComponentFactory()
-            .create()
-            .inject(this)
+        val deps: PromoComponentDependencies =
+            (activity?.applicationContext as MarketSampleApp).appComponent
+        DaggerPromoComponent.factory().create(deps).inject(this)
     }
 
     override fun onCreateView(

@@ -10,12 +10,10 @@ import ru.gb.android.homework3.presentation.common.DiscountFormatter
 import ru.gb.android.homework3.presentation.common.PriceFormatter
 import ru.gb.android.homework3.presentation.product.di.ProductComponent
 import ru.gb.android.homework3.presentation.promo.PromoStateFactory
-import ru.gb.android.homework3.presentation.promo.di.PromoComponent
 
 @Module(
     subcomponents = [
-        ProductComponent::class,
-        PromoComponent::class
+        ProductComponent::class
     ]
 )
 object SubcomponentsModule {

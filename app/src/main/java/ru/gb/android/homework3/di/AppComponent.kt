@@ -3,9 +3,12 @@ package ru.gb.android.homework3.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ru.gb.android.homework3.data.promo.PromoDataMapper
+import ru.gb.android.homework3.data.promo.PromoRepository
+import ru.gb.android.homework3.domain.promo.PromoDomainMapper
 import ru.gb.android.homework3.presentation.product.di.ProductComponent
-import ru.gb.android.homework3.presentation.promo.di.PromoComponent
-
+import ru.gb.android.homework3.presentation.promo.PromoStateFactory
+import ru.gb.android.homework3.presentation.promo.di.PromoComponentDependencies
 
 @Component(
     modules = [
@@ -15,11 +18,14 @@ import ru.gb.android.homework3.presentation.promo.di.PromoComponent
         SubcomponentsModule::class
     ]
 )
-interface AppComponent {
+interface AppComponent : PromoComponentDependencies {
 
     fun productComponentFactory(): ProductComponent.Factory
 
-    fun promoComponentFactory(): PromoComponent.Factory
+    override fun getPromoRepository(): PromoRepository
+    override fun getPromoDomainMapper(): PromoDomainMapper
+    override fun getPromoDataMapper(): PromoDataMapper
+    override fun getProvidePromoStateFactory(): PromoStateFactory
 
     @Component.Factory
     interface Factory {
