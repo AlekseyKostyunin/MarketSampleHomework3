@@ -20,7 +20,6 @@ import ru.gb.android.homework3.presentation.promo.di.PromoComponent
 )
 object SubcomponentsModule {
 
-
     @Provides
     fun provideProductDomainMapper(): ProductDomainMapper {
         return ProductDomainMapper()
@@ -67,6 +66,5 @@ object SubcomponentsModule {
     fun providePromoStateFactory(): PromoStateFactory {
         return PromoStateFactory()
     }
-
 
 }

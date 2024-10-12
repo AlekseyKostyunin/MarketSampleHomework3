@@ -34,7 +34,6 @@ class PromoListFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        //(activity?.applicationContext as MarketSampleApp).appComponent.productComponentFactory().create().inject(this)
         (activity?.applicationContext as MarketSampleApp)
             .appComponent
             .promoComponentFactory()

@@ -10,13 +10,9 @@ interface ProductComponent {
 
     @Subcomponent.Factory
     interface Factory {
-        fun create(
-//            productDomainMapper: ProductDomainMapper,
-//            productDataMapper: ProductDataMapper,
-        ): ProductComponent
+        fun create(): ProductComponent
     }
 
     fun inject(productFragment: ProductListFragment)
-
 
 }

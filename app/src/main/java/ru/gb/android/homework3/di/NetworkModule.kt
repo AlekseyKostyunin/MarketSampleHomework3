@@ -56,8 +56,4 @@ object NetworkModule {
         return HttpLoggingInterceptor()
     }
 
-
-
-
-
 }

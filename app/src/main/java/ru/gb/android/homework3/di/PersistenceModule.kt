@@ -19,8 +19,4 @@ object PersistenceModule {
         return context.appDataStore
     }
 
-
-
-
-
 }
