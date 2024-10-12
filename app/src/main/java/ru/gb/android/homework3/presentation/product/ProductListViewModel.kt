@@ -14,8 +14,9 @@ import kotlinx.coroutines.flow.update
 import ru.gb.android.homework3.domain.product.ConsumeProductsUseCase
 import ru.gb.android.homework3.domain.promo.ConsumePromosUseCase
 import ru.gb.android.homework3.marketsample.R
+import javax.inject.Inject
 
-class ProductListViewModel(
+class ProductListViewModel @Inject constructor(
     private val consumeProductsUseCase: ConsumeProductsUseCase,
     private val productStateFactory: ProductStateFactory,
     private val consumePromosUseCase: ConsumePromosUseCase,

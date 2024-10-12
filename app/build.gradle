@@ -3,16 +3,18 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.kapt)
+//    id("kotlin-kapt")
+//    id("kotlin-parcelize")
 }
 
 android {
     namespace 'ru.gb.android.homework3.marketsample'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "ru.gb.android.homework3.marketsample"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -26,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
     }
     buildFeatures {
         viewBinding true
@@ -55,6 +57,7 @@ dependencies {
     implementation libs.androidx.datastore
     implementation libs.androidx.datastore.preferences
     implementation libs.kotlinx.coroutines.rx2
+    implementation libs.kotlin.stdlib.jdk8
 
     implementation libs.dagger
     kapt libs.daggerCompiler
